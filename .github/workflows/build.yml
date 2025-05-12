@@ -231,6 +231,13 @@ jobs:
           - os: windows-11-arm
             triplet: arm64-windows
     steps:
+      - name: Update vcpkg
+        run: |
+          cd "${env:VCPKG_INSTALLATION_ROOT}"
+          git fetch --depth 1 origin HEAD
+          git reset --hard FETCH_HEAD
+          .\bootstrap-vcpkg.bat
+
       - name: Create vcpkg.json
         run: |
           echo @'
