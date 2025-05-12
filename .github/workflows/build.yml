@@ -474,3 +474,9 @@ jobs:
         env:
           CHANGELOG: ${{ needs.changelog.outputs.changelog }}
           GH_TOKEN: ${{ github.token }}
+
+      - name: Delete Old Releases
+        run: |
+          gh release list --repo ${{ github.repository }} --json tagName --jq '.[].tagName | select((. != "msys2-packages") and (. != "msys2-gcc-pkgs"))' | tail -n +11 | xargs -r -I {} -- gh release delete {} --repo ${{ github.repository }} --cleanup-tag --yes
+        env:
+          GH_TOKEN: ${{ github.token }}
