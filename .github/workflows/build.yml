@@ -185,6 +185,7 @@ jobs:
         run: |
           foreach ($pkg in (-split $env:INSTALL)) {
             gh release download msys2-packages --repo ${{ github.repository }} --pattern "${pkg}*" --pattern "mingw-w64-${{ matrix.env }}-${pkg}*"
+            if (!$?) { exit 1 }
           }
           Get-ChildItem
         env:
