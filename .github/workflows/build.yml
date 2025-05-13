@@ -329,7 +329,7 @@ jobs:
             sys: ucrt64
             variant: -gcc@14-openssl@1.1
           - os: windows-2022
-            ruby-version: '3.2'
+            ruby-version: '3.2.8'
             sys: ucrt64
             variant: -gcc@14
           - os: windows-2022
@@ -431,7 +431,7 @@ jobs:
         run: ruby -r open-uri -e 'puts URI.open("https://rubygems.org/") { |f| f.read(1024) }'
 
       - name: C extension test
-        run: gem install --platform ruby fiddle openssl psych
+        run: gem install --platform ruby --verbose date fiddle openssl psych && ruby -r date -r fiddle -r openssl -r psych -e exit
 
   changelog:
     needs: [msys2, msys2-extra, vcpkg]
