@@ -119,7 +119,7 @@ jobs:
           - os: windows-2022
             sys: mingw64
             env: x86_64
-            variant: -gcc@14-openssl@1.1
+            variant: -mingw-w64@r688-gcc@14-openssl@1.1
             install: >-
               crt-git-12.0.0.r688.g6b2176247-1
               headers-git-12.0.0.r688.g6b2176247-1
@@ -133,7 +133,7 @@ jobs:
           - os: windows-2022
             sys: ucrt64
             env: ucrt-x86_64
-            variant: -gcc@14
+            variant: -mingw-w64@r688-gcc@14
             install: >-
               crt-git-12.0.0.r688.g6b2176247-1
               headers-git-12.0.0.r688.g6b2176247-1
@@ -146,7 +146,7 @@ jobs:
           - os: windows-2022
             sys: ucrt64
             env: ucrt-x86_64
-            variant: -gcc@14-openssl@1.1
+            variant: -mingw-w64@r688-gcc@14-openssl@1.1
             install: >-
               crt-git-12.0.0.r688.g6b2176247-1
               headers-git-12.0.0.r688.g6b2176247-1
@@ -157,6 +157,17 @@ jobs:
               gcc-14.2.0-3
               gcc-libs-14.2.0-3
               openssl-1.1.1.w-1
+          - os: windows-11-arm
+            sys: clangarm64
+            env: clang-aarch64
+            variant: -mingw-w64@r688
+            install: >-
+              crt-git-12.0.0.r688.g6b2176247-1
+              headers-git-12.0.0.r688.g6b2176247-1
+              libmangle-git-12.0.0.r688.g6b2176247-1
+              libwinpthread-git-12.0.0.r688.g6b2176247-1
+              tools-git-12.0.0.r688.g6b2176247-1
+              winpthreads-git-12.0.0.r688.g6b2176247-1
     steps:
       - name: Download MSYS2
         uses: actions/download-artifact@v4
@@ -324,21 +335,25 @@ jobs:
           - os: windows-2022
             ruby-version: '3.0'
             sys: mingw64
-            variant: -gcc@14-openssl@1.1
+            variant: -mingw-w64@r688-gcc@14-openssl@1.1
           - os: windows-2022
             ruby-version: '3.1'
             sys: ucrt64
-            variant: -gcc@14-openssl@1.1
+            variant: -mingw-w64@r688-gcc@14-openssl@1.1
           - os: windows-2022
             ruby-version: '3.2.8'
             sys: ucrt64
-            variant: -gcc@14
+            variant: -mingw-w64@r688-gcc@14
           - os: windows-2022
             ruby-version: head
             sys: ucrt64
           - os: windows-11-arm
-            ruby-version: '3.4'
+            ruby-version: '3.4.3'
             sys: clangarm64
+            variant: -mingw-w64@r688
+          # - os: windows-11-arm
+          #   ruby-version: head
+          #   sys: clangarm64
           - os: windows-2022
             ruby-version: mswin
             sys: ucrt64
@@ -432,7 +447,7 @@ jobs:
         run: ruby -r open-uri -e 'puts URI.open("https://rubygems.org/") { |f| f.read(1024) }'
 
       - name: C extension test
-        run: gem install --platform ruby --verbose date fiddle openssl psych && ruby -r date -r fiddle -r openssl -r psych -e exit
+        run: gem install --platform ruby date fiddle openssl psych && ruby -r date -r fiddle -r openssl -r psych -e exit
 
   changelog:
     needs: [msys2, msys2-extra, vcpkg]

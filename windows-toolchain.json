@@ -12,7 +12,15 @@
     "href": "msys2-clangarm64.7z",
     "platform": "aarch64-mingw-ucrt",
     "required_ruby_version": [
-      [">= 3.4.dev"]
+      [">= 3.4.4"]
+    ]
+  },
+  {
+    "name": "msys2-clangarm64-mingw-w64@r688",
+    "href": "msys2-clangarm64-mingw-w64@r688.7z",
+    "platform": "aarch64-mingw-ucrt",
+    "required_ruby_version": [
+      [">= 3.4.dev", "< 3.4.4"]
     ]
   },
   {
@@ -26,8 +34,8 @@
     ]
   },
   {
-    "name": "msys2-ucrt64-gcc@14",
-    "href": "msys2-ucrt64-gcc@14.7z",
+    "name": "msys2-ucrt64-mingw-w64@r688-gcc@14",
+    "href": "msys2-ucrt64-mingw-w64@r688-gcc@14.7z",
     "platform": "x64-mingw-ucrt",
     "required_ruby_version": [
       [">= 3.4.dev", "< 3.4.4"],
@@ -36,8 +44,8 @@
     ]
   },
   {
-    "name": "msys2-ucrt64-gcc@14-openssl@1.1",
-    "href": "msys2-ucrt64-gcc@14-openssl@1.1.7z",
+    "name": "msys2-ucrt64-mingw-w64@r688-gcc@14-openssl@1.1",
+    "href": "msys2-ucrt64-mingw-w64@r688-gcc@14-openssl@1.1.7z",
     "platform": "x64-mingw-ucrt",
     "required_ruby_version": [
       [">= 3.1.dev", "< 3.2.dev"]
@@ -52,8 +60,8 @@
     ]
   },
   {
-    "name": "msys2-mingw64-gcc@14-openssl@1.1",
-    "href": "msys2-mingw64-gcc@14-openssl@1.1.7z",
+    "name": "msys2-mingw64-mingw-w64@r688-gcc@14-openssl@1.1",
+    "href": "msys2-mingw64-mingw-w64@r688-gcc@14-openssl@1.1.7z",
     "platform": "x64-mingw32",
     "required_ruby_version": [
       [">= 2.4.dev", "< 3.1.dev"]
