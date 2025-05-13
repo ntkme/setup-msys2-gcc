@@ -121,6 +121,12 @@ jobs:
             env: x86_64
             variant: -gcc@14-openssl@1.1
             install: >-
+              crt-git-12.0.0.r688.g6b2176247-1
+              headers-git-12.0.0.r688.g6b2176247-1
+              libmangle-git-12.0.0.r688.g6b2176247-1
+              libwinpthread-git-12.0.0.r688.g6b2176247-1
+              tools-git-12.0.0.r688.g6b2176247-1
+              winpthreads-git-12.0.0.r688.g6b2176247-1
               gcc-14.2.0-3
               gcc-libs-14.2.0-3
               openssl-1.1.1.w-1
@@ -129,6 +135,12 @@ jobs:
             env: ucrt-x86_64
             variant: -gcc@14
             install: >-
+              crt-git-12.0.0.r688.g6b2176247-1
+              headers-git-12.0.0.r688.g6b2176247-1
+              libmangle-git-12.0.0.r688.g6b2176247-1
+              libwinpthread-git-12.0.0.r688.g6b2176247-1
+              tools-git-12.0.0.r688.g6b2176247-1
+              winpthreads-git-12.0.0.r688.g6b2176247-1
               gcc-14.2.0-3
               gcc-libs-14.2.0-3
           - os: windows-2022
@@ -136,6 +148,12 @@ jobs:
             env: ucrt-x86_64
             variant: -gcc@14-openssl@1.1
             install: >-
+              crt-git-12.0.0.r688.g6b2176247-1
+              headers-git-12.0.0.r688.g6b2176247-1
+              libmangle-git-12.0.0.r688.g6b2176247-1
+              libwinpthread-git-12.0.0.r688.g6b2176247-1
+              tools-git-12.0.0.r688.g6b2176247-1
+              winpthreads-git-12.0.0.r688.g6b2176247-1
               gcc-14.2.0-3
               gcc-libs-14.2.0-3
               openssl-1.1.1.w-1
